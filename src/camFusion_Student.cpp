@@ -78,7 +78,7 @@ void show3DObjects(std::vector<BoundingBox> &boundingBoxes, cv::Size worldSize, 
         cv::Scalar currColor = cv::Scalar(rng.uniform(0,150), rng.uniform(0, 150), rng.uniform(0, 150));
 
         // plot Lidar points into top view image
-        int top=1e8, left=1e8, bottom=0.0, right=0.0; 
+        int top=1e8, left=1e8, bottom=0.0, right=0.0;
         float xwmin=1e8, ywmin=1e8, ywmax=-1e8;
         for (auto it2 = it1->lidarPoints.begin(); it2 != it1->lidarPoints.end(); ++it2)
         {

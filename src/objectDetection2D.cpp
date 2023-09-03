@@ -85,13 +85,11 @@ void detectObjects(cv::Mat& img, std::vector<BoundingBox>& bBoxes, float confThr
     vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confThreshold, nmsThreshold, indices);
     for(auto it=indices.begin(); it!=indices.end(); ++it) {
-        
         BoundingBox bBox;
         bBox.roi = boxes[*it];
         bBox.classID = classIds[*it];
         bBox.confidence = confidences[*it];
         bBox.boxID = (int)bBoxes.size(); // zero-based unique identifier for this bounding box
-        
         bBoxes.push_back(bBox);
     }
     
